@@ -94,12 +94,20 @@ export default function Home() {
               <p className="text-white/50 text-sm leading-relaxed mb-10 max-w-[260px]">
                 你的AI伙伴，帮你查文档、写代码、冲咖啡
               </p>
-              <button
-                onClick={() => navigate(`/chat/${activeChar.id}`)}
-                className="px-7 py-2.5 rounded-full border border-white/60 text-white text-sm font-medium hover:bg-white hover:text-black transition-all duration-200 mb-5"
-              >
-                即刻开聊
-              </button>
+              <div className="flex items-center gap-3 mb-5">
+                <button
+                  onClick={() => navigate(`/chat/${activeChar.id}`)}
+                  className="px-7 py-2.5 rounded-full border border-white/60 text-white text-sm font-medium hover:bg-white hover:text-black transition-all duration-200"
+                >
+                  即刻开聊
+                </button>
+                <button
+                  onClick={() => navigate("/create")}
+                  className="px-5 py-2.5 rounded-full border border-white/25 text-white/60 text-sm font-medium hover:border-white/50 hover:text-white/90 transition-all duration-200"
+                >
+                  + 创建角色
+                </button>
+              </div>
               <div
                 className="flex items-center gap-2 text-white/40 text-sm cursor-pointer hover:text-white/60 transition-colors"
                 onClick={() => thumbnailRef.current?.scrollIntoView({ behavior: "smooth" })}
@@ -215,12 +223,20 @@ export default function Home() {
             <h1 className="text-white text-2xl font-bold tracking-tight">AvatarClaw</h1>
             <p className="text-white/45 text-xs mt-0.5">你的AI伙伴</p>
           </div>
-          <button
-            onClick={() => navigate(`/chat/${characters[0].id}`)}
-            className="px-4 py-2 rounded-full border border-white/50 text-white text-xs font-medium"
-          >
-            即刻开聊
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => navigate(`/chat/${characters[0].id}`)}
+              className="px-4 py-2 rounded-full border border-white/50 text-white text-xs font-medium"
+            >
+              即刻开聊
+            </button>
+            <button
+              onClick={() => navigate("/create")}
+              className="px-3 py-2 rounded-full border border-white/25 text-white/55 text-xs font-medium"
+            >
+              + 创建
+            </button>
+          </div>
         </div>
 
         {/* Hero section with prismatic background */}
